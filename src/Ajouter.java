@@ -97,7 +97,7 @@ public class Ajouter {
 		frame.getContentPane().add(chckbxAucunJour);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"STI2D", "S", "ES", "L"}));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"STI2D", "S", "ES", "L", "BAC PRO SN"}));
 		comboBox_1.setBounds(59, 150, 76, 20);
 		frame.getContentPane().add(comboBox_1);
 		

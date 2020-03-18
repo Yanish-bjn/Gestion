@@ -113,7 +113,7 @@ public class Modifier {
 		frame.getContentPane().add(lblClasse);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"STI2D", "S", "ES", "L"}));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"STI2D", "S", "ES", "L", "BAC PRO SN"}));
 		comboBox_1.setBounds(62, 153, 111, 20);
 		frame.getContentPane().add(comboBox_1);
 		
