@@ -60,7 +60,7 @@ public class Menu {
 		});
 		
 		JButton btnModifier = new JButton("Modifier");
-		
+			
 		JButton btnSupprimer = new JButton("Supprimer");
 		
 		JLabel lblMenu = new JLabel("Menu");

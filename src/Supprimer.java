@@ -49,18 +49,18 @@ public class Supprimer {
 		lblSupprimerUnEtudiant.setBounds(10, 30, 175, 22);
 		frame.getContentPane().add(lblSupprimerUnEtudiant);
 		
-		JLabel lblNom = new JLabel("Nom :");
-		lblNom.setBounds(10, 61, 46, 14);
-		frame.getContentPane().add(lblNom);
+		JLabel Nom = new JLabel("Nom :");
+		Nom.setBounds(10, 61, 46, 14);
+		frame.getContentPane().add(Nom);
 		
 		textField = new JTextField();
 		textField.setBounds(46, 58, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblPrenom = new JLabel("Prenom :");
-		lblPrenom.setBounds(10, 86, 56, 14);
-		frame.getContentPane().add(lblPrenom);
+		JLabel Prenom = new JLabel("Prenom :");
+		Prenom.setBounds(10, 86, 56, 14);
+		frame.getContentPane().add(Prenom);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(76, 83, 86, 20);

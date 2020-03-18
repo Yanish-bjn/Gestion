@@ -53,13 +53,13 @@ public class Modifier {
 		lblModifierUnEtudiant.setBounds(10, 22, 163, 21);
 		frame.getContentPane().add(lblModifierUnEtudiant);
 		
-		JLabel lblNom = new JLabel("Nom :");
-		lblNom.setBounds(10, 54, 46, 14);
-		frame.getContentPane().add(lblNom);
+		JLabel Nom = new JLabel("Nom :");
+		Nom.setBounds(10, 54, 46, 14);
+		frame.getContentPane().add(Nom);
 		
-		JLabel lblPrenom = new JLabel("Prenom : ");
-		lblPrenom.setBounds(10, 79, 46, 14);
-		frame.getContentPane().add(lblPrenom);
+		JLabel Prenom = new JLabel("Prenom : ");
+		Prenom.setBounds(10, 79, 46, 14);
+		frame.getContentPane().add(Prenom);
 		
 		textField = new JTextField();
 		textField.setBounds(42, 51, 86, 20);
@@ -71,38 +71,38 @@ public class Modifier {
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblCantine = new JLabel("Cantine : ");
-		lblCantine.setBounds(10, 106, 52, 14);
-		frame.getContentPane().add(lblCantine);
+		JLabel Cantine = new JLabel("Cantine : ");
+		Cantine.setBounds(10, 106, 52, 14);
+		frame.getContentPane().add(Cantine);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Demi-pensionaires", "Externe"}));
-		comboBox.setBounds(72, 103, 112, 20);
-		frame.getContentPane().add(comboBox);
+		JComboBox choix = new JComboBox();
+		choix.setModel(new DefaultComboBoxModel(new String[] {"Demi-pensionaires", "Externe"}));
+		choix.setBounds(72, 103, 112, 20);
+		frame.getContentPane().add(choix);
 		
 		JLabel lblJour = new JLabel("Jour :");
 		lblJour.setBounds(10, 131, 46, 14);
 		frame.getContentPane().add(lblJour);
 		
-		JCheckBox chckbxLundi = new JCheckBox("Lundi");
-		chckbxLundi.setBounds(42, 127, 58, 23);
-		frame.getContentPane().add(chckbxLundi);
+		JCheckBox Lundi = new JCheckBox("Lundi");
+		Lundi.setBounds(42, 127, 58, 23);
+		frame.getContentPane().add(Lundi);
 		
-		JCheckBox chckbxMardi = new JCheckBox("Mardi");
-		chckbxMardi.setBounds(97, 127, 62, 23);
-		frame.getContentPane().add(chckbxMardi);
+		JCheckBox Mardi = new JCheckBox("Mardi");
+		Mardi.setBounds(97, 127, 62, 23);
+		frame.getContentPane().add(Mardi);
 		
-		JCheckBox chckbxMercredi = new JCheckBox("Mercredi");
-		chckbxMercredi.setBounds(157, 127, 77, 23);
-		frame.getContentPane().add(chckbxMercredi);
+		JCheckBox Mercredi = new JCheckBox("Mercredi");
+		Mercredi.setBounds(157, 127, 77, 23);
+		frame.getContentPane().add(Mercredi);
 		
-		JCheckBox chckbxJeudi = new JCheckBox("Jeudi");
-		chckbxJeudi.setBounds(236, 127, 62, 23);
-		frame.getContentPane().add(chckbxJeudi);
+		JCheckBox Jeudi = new JCheckBox("Jeudi");
+		Jeudi.setBounds(236, 127, 62, 23);
+		frame.getContentPane().add(Jeudi);
 		
-		JCheckBox chckbxVendredi = new JCheckBox("Vendredi");
-		chckbxVendredi.setBounds(296, 127, 77, 23);
-		frame.getContentPane().add(chckbxVendredi);
+		JCheckBox Vendredi = new JCheckBox("Vendredi");
+		Vendredi.setBounds(296, 127, 77, 23);
+		frame.getContentPane().add(Vendredi);
 		
 		JCheckBox chckbxAucunJour = new JCheckBox("Aucun jour");
 		chckbxAucunJour.setBounds(373, 127, 110, 23);
@@ -112,22 +112,22 @@ public class Modifier {
 		lblClasse.setBounds(10, 156, 46, 14);
 		frame.getContentPane().add(lblClasse);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"STI2D", "S", "ES", "L", "BAC PRO SN"}));
-		comboBox_1.setBounds(62, 153, 111, 20);
-		frame.getContentPane().add(comboBox_1);
+		JComboBox classe = new JComboBox();
+		classe.setModel(new DefaultComboBoxModel(new String[] {"STI2D", "S", "ES", "L", "BAC PRO SN"}));
+		classe.setBounds(62, 153, 111, 20);
+		frame.getContentPane().add(classe);
 		
-		JLabel lblRegimeParticulier = new JLabel("Regime particulier :");
-		lblRegimeParticulier.setBounds(10, 181, 104, 14);
-		frame.getContentPane().add(lblRegimeParticulier);
+		JLabel regime = new JLabel("Regime particulier :");
+		regime.setBounds(10, 181, 104, 14);
+		frame.getContentPane().add(regime);
 		
-		JRadioButton rdbtnOui = new JRadioButton("Oui");
-		rdbtnOui.setBounds(113, 177, 46, 23);
-		frame.getContentPane().add(rdbtnOui);
+		JRadioButton Oui = new JRadioButton("Oui");
+		Oui.setBounds(113, 177, 46, 23);
+		frame.getContentPane().add(Oui);
 		
-		JRadioButton rdbtnNon = new JRadioButton("Non");
-		rdbtnNon.setBounds(167, 177, 109, 23);
-		frame.getContentPane().add(rdbtnNon);
+		JRadioButton Non = new JRadioButton("Non");
+		Non.setBounds(167, 177, 109, 23);
+		frame.getContentPane().add(Non);
 		
 		JButton btnModifier = new JButton("Modifier");
 		btnModifier.setBounds(123, 206, 89, 23);
