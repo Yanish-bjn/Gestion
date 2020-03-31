@@ -1,9 +1,20 @@
-import java.awt.EventQueue;
 
+
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+
+
+
 
 public class Accueil {
 
@@ -44,9 +55,9 @@ public class Accueil {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Identifiant :");
-		lblNewLabel.setBounds(10, 83, 65, 14);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel lblIdentifiant = new JLabel("Identifiant :");
+		lblIdentifiant.setBounds(10, 83, 65, 14);
+		frame.getContentPane().add(lblIdentifiant);
 		
 		textField = new JTextField();
 		textField.setBounds(72, 80, 86, 20);
@@ -66,5 +77,10 @@ public class Accueil {
 		lblConnexion.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		lblConnexion.setBounds(41, 38, 99, 14);
 		frame.getContentPane().add(lblConnexion);
+		
+		JButton btnConnexion = new JButton("Connexion");			
+		btnConnexion.setBounds(102, 137, 89, 23);
+		frame.getContentPane().add(btnConnexion);	
 	}
 }
+		
