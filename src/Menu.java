@@ -16,12 +16,16 @@ import javax.swing.table.DefaultTableModel;
 
 public class Menu extends JFrame implements ActionListener{
 
-	private JFrame frame;
+	JFrame frame;
 	private JTable table;
 
 	/**
-	 * Launch the application.
-	 */
+	* Launch the application.
+	*/
+	/**
+	* Create the application.
+	*/
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,10 +45,6 @@ public class Menu extends JFrame implements ActionListener{
 	public Menu() {
 		initialize();
 	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 449, 300);
@@ -53,30 +53,24 @@ public class Menu extends JFrame implements ActionListener{
 		JButton btnAjouterEtudiant = new JButton("Ajouter");
 		btnAjouterEtudiant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent Ajouter) {
-				final JFrame frame = new JFrame("Test");
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setSize(300, 300);
-				frame.setVisible(true);
+				Ajouter window = new Ajouter();
+				window.frame.setVisible(true);
 			}
 		});
 
 		JButton btnModifier = new JButton("Modifier");
 		btnModifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				final JFrame frame = new JFrame("Test");
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setSize(300, 300);
-				frame.setVisible(true);
+				Modifier window = new Modifier();
+				window.frame.setVisible(true);
 			}
 		});
 
 		JButton btnSupprimer = new JButton("Supprimer");
 		btnSupprimer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				final JFrame frame = new JFrame("Test");
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setSize(300, 300);
-				frame.setVisible(true);
+				Supprimer window = new Supprimer();
+				window.frame.setVisible(true);
 			}
 		});
 
@@ -121,5 +115,6 @@ public class Menu extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

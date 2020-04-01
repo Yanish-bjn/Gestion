@@ -12,7 +12,7 @@ import javax.swing.JButton;
 
 public class Modifier {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 
