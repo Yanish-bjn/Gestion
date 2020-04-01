@@ -140,9 +140,7 @@ public class Ajouter {
 		frame.getContentPane().add(btnAjouter);
 	}
 
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
 
-	}
+
 
 }

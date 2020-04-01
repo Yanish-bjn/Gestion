@@ -5,21 +5,16 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.Box;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
-public class Menu {
+
+public class Menu extends JFrame implements ActionListener{
 
 	private JFrame frame;
 	private JTable table;
@@ -51,7 +46,6 @@ public class Menu {
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
-		Ajouter fen;
 		frame = new JFrame();
 		frame.setBounds(100, 100, 449, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -120,6 +114,12 @@ public class Menu {
 				new String[] { "Nom", "Prenom", "Cantine", "Jour", "Classe", "Regime" }));
 		scrollPane.setViewportView(table);
 		frame.getContentPane().setLayout(groupLayout);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -79,8 +79,18 @@ public class Accueil {
 		frame.getContentPane().add(lblConnexion);
 		
 		JButton btnConnexion = new JButton("Connexion");			
+		btnConnexion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					if (textField.getText().contentEquals("Bhujun") == true && textField_1.getText().contentEquals("Yanish") == true ) {
+					Menu connexion = new Menu();
+					System.out.print("ok");
+					}
+			}
+		});
 		btnConnexion.setBounds(102, 137, 89, 23);
-		frame.getContentPane().add(btnConnexion);	
+		frame.getContentPane().add(btnConnexion);
+		
+
 	}
 }
 		
