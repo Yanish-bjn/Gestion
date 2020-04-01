@@ -136,6 +136,11 @@ public class Ajouter {
 		textField_1.setColumns(10);
 
 		JButton btnAjouter = new JButton("Ajouter");
+		btnAjouter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				insertion.ajouter(nom.textField.getText(), prenom.textField.getText(), choix.JComboBox(),film.getSelectedItem(), prix.getText());
+			}
+		});
 		btnAjouter.setBounds(113, 204, 89, 23);
 		frame.getContentPane().add(btnAjouter);
 	}
