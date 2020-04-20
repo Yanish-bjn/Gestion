@@ -6,16 +6,27 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JCheckBox;
-import javax.swing.JRadioButton;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.awt.event.ActionEvent;
 
 public class Modifier {
 
 	JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-
+	private JTextField nom;
+	private JTextField prenom;
+	public String Jour;
+	public String Cantine;
+	public String Classe;
+	public String Regime;
+	private JTextField id;
+	private JTextField jour;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -53,61 +64,48 @@ public class Modifier {
 		lblModifierUnEtudiant.setBounds(10, 22, 163, 21);
 		frame.getContentPane().add(lblModifierUnEtudiant);
 
-		JLabel Nom = new JLabel("Nom :");
-		Nom.setBounds(10, 54, 46, 14);
-		frame.getContentPane().add(Nom);
+		JLabel lblNom = new JLabel("Nom :");
+		lblNom.setBounds(10, 54, 46, 14);
+		frame.getContentPane().add(lblNom);
 
-		JLabel Prenom = new JLabel("Prenom : ");
-		Prenom.setBounds(10, 79, 46, 14);
-		frame.getContentPane().add(Prenom);
+		JLabel lblPrenom = new JLabel("Prenom : ");
+		lblPrenom.setBounds(10, 79, 46, 14);
+		frame.getContentPane().add(lblPrenom);
 
-		textField = new JTextField();
-		textField.setBounds(42, 51, 86, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		nom = new JTextField();
+		nom.setBounds(42, 51, 86, 20);
+		frame.getContentPane().add(nom);
+		
+		
 
-		textField_1 = new JTextField();
-		textField_1.setBounds(62, 76, 86, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		prenom = new JTextField();
+		prenom.setBounds(62, 76, 86, 20);
+		frame.getContentPane().add(prenom);
+	
+		
 
-		JLabel Cantine = new JLabel("Cantine : ");
-		Cantine.setBounds(10, 106, 52, 14);
-		frame.getContentPane().add(Cantine);
+		
+		JLabel lblCantine = new JLabel("Cantine : ");
+		lblCantine.setBounds(10, 106, 52, 14);
+		frame.getContentPane().add(lblCantine);
 
-		JComboBox choix = new JComboBox();
-		choix.setModel(new DefaultComboBoxModel(new String[] { "Demi-pensionaires", "Externe" }));
-		choix.setBounds(72, 103, 112, 20);
-		frame.getContentPane().add(choix);
+		JComboBox cantine = new JComboBox();
+		cantine.setModel(new DefaultComboBoxModel(new String[] { "Demi-pensionaires", "Externe" }));
+		cantine.setBounds(72, 103, 112, 20);
+		frame.getContentPane().add(cantine);
+		Cantine = cantine.getSelectedItem().toString();
 
+		
 		JLabel lblJour = new JLabel("Jour :");
 		lblJour.setBounds(10, 131, 46, 14);
 		frame.getContentPane().add(lblJour);
+		
+		jour = new JTextField();
+		jour.setBounds(42, 125, 86, 20);
+		frame.getContentPane().add(jour);
+		jour.setColumns(10);
 
-		JCheckBox Lundi = new JCheckBox("Lundi");
-		Lundi.setBounds(42, 127, 58, 23);
-		frame.getContentPane().add(Lundi);
-
-		JCheckBox Mardi = new JCheckBox("Mardi");
-		Mardi.setBounds(97, 127, 62, 23);
-		frame.getContentPane().add(Mardi);
-
-		JCheckBox Mercredi = new JCheckBox("Mercredi");
-		Mercredi.setBounds(157, 127, 77, 23);
-		frame.getContentPane().add(Mercredi);
-
-		JCheckBox Jeudi = new JCheckBox("Jeudi");
-		Jeudi.setBounds(236, 127, 62, 23);
-		frame.getContentPane().add(Jeudi);
-
-		JCheckBox Vendredi = new JCheckBox("Vendredi");
-		Vendredi.setBounds(296, 127, 77, 23);
-		frame.getContentPane().add(Vendredi);
-
-		JCheckBox chckbxAucunJour = new JCheckBox("Aucun jour");
-		chckbxAucunJour.setBounds(373, 127, 110, 23);
-		frame.getContentPane().add(chckbxAucunJour);
-
+		
 		JLabel lblClasse = new JLabel("Classe : ");
 		lblClasse.setBounds(10, 156, 46, 14);
 		frame.getContentPane().add(lblClasse);
@@ -116,22 +114,71 @@ public class Modifier {
 		classe.setModel(new DefaultComboBoxModel(new String[] { "STI2D", "S", "ES", "L", "BAC PRO SN" }));
 		classe.setBounds(62, 153, 111, 20);
 		frame.getContentPane().add(classe);
-
-		JLabel regime = new JLabel("Regime particulier :");
-		regime.setBounds(10, 181, 104, 14);
+		Classe = classe.getSelectedItem().toString();
+		
+		
+		JLabel lblregime = new JLabel("Regime particulier :");
+		lblregime.setBounds(10, 181, 104, 14);
+		frame.getContentPane().add(lblregime);
+		
+		JComboBox regime = new JComboBox();
+		regime.setModel(new DefaultComboBoxModel(new String[] {"Oui", "Non"}));
+		regime.setBounds(112, 178, 61, 20);
 		frame.getContentPane().add(regime);
-
-		JRadioButton Oui = new JRadioButton("Oui");
-		Oui.setBounds(113, 177, 46, 23);
-		frame.getContentPane().add(Oui);
-
-		JRadioButton Non = new JRadioButton("Non");
-		Non.setBounds(167, 177, 109, 23);
-		frame.getContentPane().add(Non);
-
+		Regime = regime.getSelectedItem().toString();
+		
+		JLabel lblId = new JLabel("ID :");
+		lblId.setBounds(10, 206, 46, 14);
+		frame.getContentPane().add(lblId);
+		
+		id = new JTextField();
+		id.setBounds(31, 203, 86, 20);
+		frame.getContentPane().add(id);
+		id.setColumns(10);
+		
+		
 		JButton btnModifier = new JButton("Modifier");
-		btnModifier.setBounds(123, 206, 89, 23);
+		btnModifier.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modification.modifier(nom.getText(), prenom.getText(), Cantine, jour.getText(), Classe, Regime, id.getText());
+			}
+		});
+		btnModifier.setBounds(125, 227, 89, 23);
 		frame.getContentPane().add(btnModifier);
 	}
+	
+	public static Connection  connecterDB() {
+		try {
+			String url = "jdbc:mysql://localhost/gestion?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+			String user="root";
+			String password ="";
+		    System.out.println("Connexion Etablit");
+			Connection cnx = DriverManager.getConnection(url,user,password);
+			return cnx;
+		}
+		catch(Exception es) {
+			System.out.println("Une erreur est survenue lors de la connexion a la base de données");
+			es.printStackTrace();
+			return null;
 
+		}
+	}
+		protected void modifier(String Nom, String Prenom, String Cantine, Object Jour, Object classe, Object regime, String id) {
+		try {
+			String query = "UPDATE etudiant SET Nom='"+Nom
+	                + ", Prenom="+Prenom
+	                + ", cantine="+Cantine
+	                + ", Jour="+Jour
+	                + ", Classe="+classe
+	                + ", Regime='"+regime
+	                + "WHERE id="+id;
+			Connection cnx = connecterDB();
+			Statement st = cnx.createStatement();
+			st.executeUpdate(query);
+			System.out.println("etudiant modifier");
+			
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		}
 }

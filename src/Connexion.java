@@ -16,7 +16,7 @@ import java.awt.event.MouseEvent;
 
 
 
-public class Accueil {
+public class Connexion {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -30,7 +30,7 @@ public class Accueil {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Accueil window = new Accueil();
+					Connexion window = new Connexion();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class Accueil {
 	/**
 	 * Create the application.
 	 */
-	public Accueil() {
+	public Connexion() {
 		initialize();
 	}
 
@@ -83,7 +83,7 @@ public class Accueil {
 		frame.getContentPane().add(btnConnexion);
 		btnConnexion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					if (textField.getText().contentEquals("Bhujun") == true && textField_1.getText().contentEquals("Yanish") == true ) {
+					if (textField.getText().contentEquals("Test") == true && textField_1.getText().contentEquals("Test") == true ) {
 						Menu window = new Menu();
 						window.frame.setVisible(true);
 			}
@@ -92,9 +92,6 @@ public class Accueil {
 
 	}
 
-	protected void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
 		

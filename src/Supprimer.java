@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -5,16 +6,38 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.awt.event.ActionEvent;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Supprimer {
 
 	JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
+	
 
+	public static Connection cnx;
+	private JTextField id;
+
+
+	public int ID;
 	/**
 	 * Launch the application.
 	 */
+	
+	public static class ConnexionJM {
+		static Connection cnx;
+		static Statement st;
+		static ResultSet rst;
+		
+	}
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,27 +72,29 @@ public class Supprimer {
 		lblSupprimerUnEtudiant.setBounds(10, 30, 175, 22);
 		frame.getContentPane().add(lblSupprimerUnEtudiant);
 
-		JLabel Nom = new JLabel("Nom :");
-		Nom.setBounds(10, 61, 46, 14);
-		frame.getContentPane().add(Nom);
-
-		textField = new JTextField();
-		textField.setBounds(46, 58, 86, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-
-		JLabel Prenom = new JLabel("Prenom :");
-		Prenom.setBounds(10, 86, 56, 14);
-		frame.getContentPane().add(Prenom);
-
-		textField_1 = new JTextField();
-		textField_1.setBounds(76, 83, 86, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-
+		JLabel lblid = new JLabel("ID :");
+		lblid.setBounds(10, 61, 46, 14);
+		frame.getContentPane().add(lblid);
+		
+		id = new JTextField();
+		id.setBounds(35, 58, 86, 20);
+		frame.getContentPane().add(id);
+		id.setColumns(10);
+		
+				
+		
 		JButton btnSupprimer = new JButton("Supprimer");
+		btnSupprimer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				suppresion.supprimer(id.getText());
+			}
+
+		
+		});
 		btnSupprimer.setBounds(124, 114, 109, 23);
 		frame.getContentPane().add(btnSupprimer);
+				
 	}
-
+	
 }
+
