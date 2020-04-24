@@ -77,13 +77,10 @@ public class Modifier {
 		frame.getContentPane().add(nom);
 		
 		
-
 		prenom = new JTextField();
 		prenom.setBounds(62, 76, 86, 20);
 		frame.getContentPane().add(prenom);
 	
-		
-
 		
 		JLabel lblCantine = new JLabel("Cantine : ");
 		lblCantine.setBounds(10, 106, 52, 14);
@@ -93,7 +90,7 @@ public class Modifier {
 		cantine.setModel(new DefaultComboBoxModel(new String[] { "Demi-pensionaires", "Externe" }));
 		cantine.setBounds(72, 103, 112, 20);
 		frame.getContentPane().add(cantine);
-		Cantine = cantine.getSelectedItem().toString();
+		
 
 		
 		JLabel lblJour = new JLabel("Jour :");
@@ -114,7 +111,7 @@ public class Modifier {
 		classe.setModel(new DefaultComboBoxModel(new String[] { "STI2D", "S", "ES", "L", "BAC PRO SN" }));
 		classe.setBounds(62, 153, 111, 20);
 		frame.getContentPane().add(classe);
-		Classe = classe.getSelectedItem().toString();
+		
 		
 		
 		JLabel lblregime = new JLabel("Regime particulier :");
@@ -125,7 +122,7 @@ public class Modifier {
 		regime.setModel(new DefaultComboBoxModel(new String[] {"Oui", "Non"}));
 		regime.setBounds(112, 178, 61, 20);
 		frame.getContentPane().add(regime);
-		Regime = regime.getSelectedItem().toString();
+	
 		
 		JLabel lblId = new JLabel("ID :");
 		lblId.setBounds(10, 206, 46, 14);
@@ -140,7 +137,7 @@ public class Modifier {
 		JButton btnModifier = new JButton("Modifier");
 		btnModifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				modification.modifier(nom.getText(), prenom.getText(), Cantine, jour.getText(), Classe, Regime, id.getText());
+				modification.modifier(nom.getText(), prenom.getText(), cantine.getSelectedItem().toString(), jour.getText(), classe.getSelectedItem().toString(), regime.getSelectedItem().toString(), id.getText());
 			}
 		});
 		btnModifier.setBounds(125, 227, 89, 23);

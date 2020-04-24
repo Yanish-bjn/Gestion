@@ -33,9 +33,6 @@ public class Supprimer {
 	 */
 	
 	public static class ConnexionJM {
-		static Connection cnx;
-		static Statement st;
-		static ResultSet rst;
 		
 	}
 	public static void main(String[] args) {
@@ -67,26 +64,26 @@ public class Supprimer {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblSupprimerUnEtudiant = new JLabel("Supprimer un etudiant");
-		lblSupprimerUnEtudiant.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		lblSupprimerUnEtudiant.setBounds(10, 30, 175, 22);
+		JLabel lblSupprimerUnEtudiant = new JLabel("Supprimer un etudiant"); // Nom de la page //
+		lblSupprimerUnEtudiant.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13)); // Police, taille, style //
+		lblSupprimerUnEtudiant.setBounds(10, 30, 175, 22); // Placement sur la page //
 		frame.getContentPane().add(lblSupprimerUnEtudiant);
 
-		JLabel lblid = new JLabel("ID :");
-		lblid.setBounds(10, 61, 46, 14);
+		JLabel lblid = new JLabel("ID :"); // Créattion d'un label présentant la zone de texte //
+		lblid.setBounds(10, 61, 46, 14); // Placement sur la page //
 		frame.getContentPane().add(lblid);
 		
-		id = new JTextField();
-		id.setBounds(35, 58, 86, 20);
+		id = new JTextField(); // Création d'une zone de texte //
+		id.setBounds(35, 58, 86, 20); // Placement sur la page //
 		frame.getContentPane().add(id);
 		id.setColumns(10);
 		
 				
 		
-		JButton btnSupprimer = new JButton("Supprimer");
-		btnSupprimer.addActionListener(new ActionListener() {
+		JButton btnSupprimer = new JButton("Supprimer"); // Mise en place d'un bouton //
+		btnSupprimer.addActionListener(new ActionListener() { // Mise en place de l'action du bouton //
 			public void actionPerformed(ActionEvent arg0) {
-				suppresion.supprimer(id.getText());
+				suppresion.supprimer(id.getText()); // redirection des données vers la page de traitement //
 			}
 
 		

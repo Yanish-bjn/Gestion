@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 19 avr. 2020 à 17:50
+-- Généré le :  ven. 24 avr. 2020 à 17:49
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -59,17 +59,19 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   `Classe` varchar(30) COLLATE utf8_bin NOT NULL,
   `Regime` varchar(30) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `etudiant`
 --
 
 INSERT INTO `etudiant` (`id`, `Nom`, `Prenom`, `Cantine`, `Jour`, `Classe`, `Regime`) VALUES
-(1, 'Test', 'Test', 'Oui', 3, 'S', 'Non'),
-(3, 'BHUJUN', 'Yanish', 'Non', 0, 'S', 'Non'),
 (4, 'Test', 'Test', 'Oui', 5, 'L', 'Oui'),
-(5, 'aa', 'aa', 'Non', 0, 'S', 'Non');
+(5, 'aa', 'aa', 'Non', 0, 'S', 'Non'),
+(18, 'zz', 'zz', 'Demi-pensionaires', 1, 'STI2D', 'Oui'),
+(20, 'Bhujun', 'Yanish', 'Externe', 5, 'S', 'Oui'),
+(21, 'Test', 'Test', 'Externe', 5, 'S', 'Oui'),
+(22, 'BONJOUR', 'Bonjour', 'Demi-pensionaires', 5, 'STI2D', 'Oui');
 
 -- --------------------------------------------------------
 

@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Font;
+import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -17,6 +18,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.lang.Object;
+import java.awt.SystemColor;
 
 
 
@@ -38,7 +41,6 @@ public class Ajouter {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-    	BDD insertion = new BDD();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -64,7 +66,6 @@ public class Ajouter {
 	 */
 
 	public void initialize() {
-		BDD ajouter = new BDD();
 		frame = new JFrame();
 		frame.setBounds(100, 100, 501, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -101,9 +102,8 @@ public class Ajouter {
 		cantine.setModel(new DefaultComboBoxModel(new String[] {"Externe", "Demi-pensionnaire"}));
 		cantine.setBounds(59, 100, 105, 20);
 		frame.getContentPane().add(cantine);
-		Cantine = cantine.getSelectedItem().toString();
+	
 
-		
 		JLabel lblJour = new JLabel("Jour :");
 		lblJour.setBounds(10, 128, 46, 14);
 		frame.getContentPane().add(lblJour);
@@ -112,17 +112,16 @@ public class Ajouter {
 		jour.setBounds(49, 125, 86, 20);
 		frame.getContentPane().add(jour);
 		jour.setColumns(10);
-
 		
+			
 		JLabel lblClasse = new JLabel("Classe :");
 		lblClasse.setBounds(10, 153, 46, 14);
 		frame.getContentPane().add(lblClasse);
 		
 		JComboBox<?> classe = new JComboBox();
-		classe.setModel(new DefaultComboBoxModel(new String[] {"S", "ES", "L", "Bac pro SN"}));
+		classe.setModel(new DefaultComboBoxModel(new String[] {"S", "ES", "L", "Bac pro SN", "STI2D"}));
 		classe.setBounds(59, 150, 76, 20);
 		frame.getContentPane().add(classe);
-		Classe = classe.getSelectedItem().toString();
 
 
 		JLabel lblregime = new JLabel("Régime particulier :");
@@ -135,18 +134,32 @@ public class Ajouter {
 		regime.setMaximumRowCount(2);
 		regime.setBounds(113, 175, 51, 20);
 		frame.getContentPane().add(regime);
-		Regime = regime.getSelectedItem().toString();
+		
 		
 		
 		JButton btnAjouter = new JButton("Ajouter");
 		btnAjouter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				insertion.ajouter(nom.getText(), prenom.getText(), Cantine, jour.getText(), Classe, Regime);
+				insertion.ajouter(nom.getText(), prenom.getText(), cantine.getSelectedItem().toString(), jour.getText(), classe.getSelectedItem().toString(), regime.getSelectedItem().toString());
 			}
 		});
 		btnAjouter.setBounds(113, 204, 89, 23);
 		frame.getContentPane().add(btnAjouter);	
 		
-	}	
+		JButton btnPrix = new JButton("Prix");
+		btnPrix.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			String prix = jour.getText();
+			int total = Integer.parseInt(prix)*4;
+			Label label_4 = new Label();
+			label_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+			label_4.setForeground(SystemColor.desktop);
+			label_4.setBounds(110, 212, 89, 14);
+			label_4.setText(String.valueOf(total)+"€ / Mois");
+			}
+		});
+		btnPrix.setBounds(145, 124, 89, 23);
+		frame.getContentPane().add(btnPrix);
 		
+	}	
 }
