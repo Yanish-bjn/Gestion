@@ -73,7 +73,7 @@ public class Supprimer {
 		lblid.setBounds(10, 61, 46, 14); // Placement sur la page //
 		frame.getContentPane().add(lblid);
 		
-		id = new JTextField(); // Création d'une zone de texte //
+		id = new JTextField(); // Création d'une zone de texte  permettant de saisir l'id//
 		id.setBounds(35, 58, 86, 20); // Placement sur la page //
 		frame.getContentPane().add(id);
 		id.setColumns(10);

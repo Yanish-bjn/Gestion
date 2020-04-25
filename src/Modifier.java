@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 
+// ensembles des imports //
 public class Modifier {
 
 	JFrame frame;
@@ -25,7 +26,7 @@ public class Modifier {
 	public String Regime;
 	private JTextField id;
 	private JTextField jour;
-	
+	// Déclaration des variables //
 	
 	/**
 	 * Launch the application.
@@ -59,83 +60,83 @@ public class Modifier {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblModifierUnEtudiant = new JLabel("Modifier un etudiant");
-		lblModifierUnEtudiant.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		lblModifierUnEtudiant.setBounds(10, 22, 163, 21);
+		JLabel lblModifierUnEtudiant = new JLabel("Modifier un etudiant"); // Nom de la page //
+		lblModifierUnEtudiant.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13)); // style, Police, Taille //
+		lblModifierUnEtudiant.setBounds(10, 22, 163, 21); // placement sur la page //
 		frame.getContentPane().add(lblModifierUnEtudiant);
 
-		JLabel lblNom = new JLabel("Nom :");
-		lblNom.setBounds(10, 54, 46, 14);
+		JLabel lblNom = new JLabel("Nom :");  // Création d'un label permettant de présenter une zone de texte  //
+		lblNom.setBounds(10, 54, 46, 14); // Placement sur la page //
 		frame.getContentPane().add(lblNom);
 
-		JLabel lblPrenom = new JLabel("Prenom : ");
-		lblPrenom.setBounds(10, 79, 46, 14);
+		JLabel lblPrenom = new JLabel("Prenom : "); // Création d'un label permettant de présenter une zone de texte  //
+		lblPrenom.setBounds(10, 79, 46, 14); // Placement sur la page //
 		frame.getContentPane().add(lblPrenom);
 
-		nom = new JTextField();
-		nom.setBounds(42, 51, 86, 20);
+		nom = new JTextField(); // Création d'une zone de texte permettat de saisir le nom //
+		nom.setBounds(42, 51, 86, 20); // Placement sur la page //
 		frame.getContentPane().add(nom);
 		
 		
-		prenom = new JTextField();
-		prenom.setBounds(62, 76, 86, 20);
+		prenom = new JTextField(); // Création d'une zone de texte permettat de saisir le prenom //
+		prenom.setBounds(62, 76, 86, 20); // Placement sur la page //
 		frame.getContentPane().add(prenom);
 	
 		
-		JLabel lblCantine = new JLabel("Cantine : ");
-		lblCantine.setBounds(10, 106, 52, 14);
+		JLabel lblCantine = new JLabel("Cantine : "); // Création d'un label permettant de présenter une liste déroulante  //
+		lblCantine.setBounds(10, 106, 52, 14); // Placement sur la page //
 		frame.getContentPane().add(lblCantine);
 
-		JComboBox cantine = new JComboBox();
-		cantine.setModel(new DefaultComboBoxModel(new String[] { "Demi-pensionaires", "Externe" }));
-		cantine.setBounds(72, 103, 112, 20);
+		JComboBox cantine = new JComboBox(); // Création d'une liste déroulante permettant de choisir la cantine  //
+		cantine.setModel(new DefaultComboBoxModel(new String[] { "Demi-pensionaires", "Externe" })); // Voici les choix pour la liste deroulante //
+		cantine.setBounds(72, 103, 112, 20); // Placement sur la page //
 		frame.getContentPane().add(cantine);
 		
 
 		
-		JLabel lblJour = new JLabel("Jour :");
-		lblJour.setBounds(10, 131, 46, 14);
+		JLabel lblJour = new JLabel("Jour :");// Création d'un label permettant de présenter une liste déroulante  //
+		lblJour.setBounds(10, 131, 46, 14); // Placement sur la page //
 		frame.getContentPane().add(lblJour);
 		
-		jour = new JTextField();
-		jour.setBounds(42, 125, 86, 20);
+		jour = new JTextField(); // Création d'une liste déroulante permettant de choisir les jours  //
+		jour.setBounds(42, 125, 86, 20); // Placement sur la page //
 		frame.getContentPane().add(jour);
 		jour.setColumns(10);
 
 		
-		JLabel lblClasse = new JLabel("Classe : ");
-		lblClasse.setBounds(10, 156, 46, 14);
+		JLabel lblClasse = new JLabel("Classe : "); // Création d'un label permettant de présenter une liste déroulante  //
+		lblClasse.setBounds(10, 156, 46, 14); // Placement sur la page //
 		frame.getContentPane().add(lblClasse);
 
-		JComboBox classe = new JComboBox();
-		classe.setModel(new DefaultComboBoxModel(new String[] { "STI2D", "S", "ES", "L", "BAC PRO SN" }));
-		classe.setBounds(62, 153, 111, 20);
+		JComboBox classe = new JComboBox(); // Création d'une liste déroulante permettant de choisir la classe  //
+		classe.setModel(new DefaultComboBoxModel(new String[] { "STI2D", "S", "ES", "L", "BAC PRO SN" })); // Voici les choix pour la liste deroulante //
+		classe.setBounds(62, 153, 111, 20); // Placement sur la page //
 		frame.getContentPane().add(classe);
 		
 		
 		
-		JLabel lblregime = new JLabel("Regime particulier :");
-		lblregime.setBounds(10, 181, 104, 14);
+		JLabel lblregime = new JLabel("Regime particulier :"); // Création d'un label permettant de présenter une liste déroulante  //
+		lblregime.setBounds(10, 181, 104, 14); // Placement sur la page //
 		frame.getContentPane().add(lblregime);
 		
-		JComboBox regime = new JComboBox();
-		regime.setModel(new DefaultComboBoxModel(new String[] {"Oui", "Non"}));
-		regime.setBounds(112, 178, 61, 20);
+		JComboBox regime = new JComboBox(); // Création d'une liste déroulante permettant de choisir le regime //
+		regime.setModel(new DefaultComboBoxModel(new String[] {"Oui", "Non"})); // Voici les choix pour la liste deroulante //
+		regime.setBounds(112, 178, 61, 20); // Placement sur la page //
 		frame.getContentPane().add(regime);
 	
 		
-		JLabel lblId = new JLabel("ID :");
-		lblId.setBounds(10, 206, 46, 14);
+		JLabel lblId = new JLabel("ID :"); // Création d'un label permettant de présenter une zone de texte  //
+		lblId.setBounds(10, 206, 46, 14);  // Placement sur la page //
 		frame.getContentPane().add(lblId);
 		
-		id = new JTextField();
-		id.setBounds(31, 203, 86, 20);
+		id = new JTextField(); // Création d'une zone de texte permettant de saisir l'id//
+		id.setBounds(31, 203, 86, 20); // Placement sur la page //
 		frame.getContentPane().add(id);
 		id.setColumns(10);
 		
 		
-		JButton btnModifier = new JButton("Modifier");
-		btnModifier.addActionListener(new ActionListener() {
+		JButton btnModifier = new JButton("Modifier"); // Création d'un bouton permetant d'envoyer le resultat du formulaire vers le traitement //
+		btnModifier.addActionListener(new ActionListener() { // Mise en place de l'action du bouton //
 			public void actionPerformed(ActionEvent e) {
 				modification.modifier(nom.getText(), prenom.getText(), cantine.getSelectedItem().toString(), jour.getText(), classe.getSelectedItem().toString(), regime.getSelectedItem().toString(), id.getText());
 			}
@@ -144,38 +145,6 @@ public class Modifier {
 		frame.getContentPane().add(btnModifier);
 	}
 	
-	public static Connection  connecterDB() {
-		try {
-			String url = "jdbc:mysql://localhost/gestion?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-			String user="root";
-			String password ="";
-		    System.out.println("Connexion Etablit");
-			Connection cnx = DriverManager.getConnection(url,user,password);
-			return cnx;
+	
 		}
-		catch(Exception es) {
-			System.out.println("Une erreur est survenue lors de la connexion a la base de données");
-			es.printStackTrace();
-			return null;
 
-		}
-	}
-		protected void modifier(String Nom, String Prenom, String Cantine, Object Jour, Object classe, Object regime, String id) {
-		try {
-			String query = "UPDATE etudiant SET Nom='"+Nom
-	                + ", Prenom="+Prenom
-	                + ", cantine="+Cantine
-	                + ", Jour="+Jour
-	                + ", Classe="+classe
-	                + ", Regime='"+regime
-	                + "WHERE id="+id;
-			Connection cnx = connecterDB();
-			Statement st = cnx.createStatement();
-			st.executeUpdate(query);
-			System.out.println("etudiant modifier");
-			
-		}catch(SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		}
-}
